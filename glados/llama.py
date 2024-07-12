@@ -2,7 +2,8 @@ import subprocess
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Self, Sequence
+from typing import Sequence
+from typing_extensions import Self
 
 import requests
 import yaml

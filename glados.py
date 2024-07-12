@@ -426,7 +426,11 @@ class Glados:
         start_time = time.time()
         played_samples = 0.0
 
-        while sd.get_stream().active:
+        while True:
+            try:
+                assert sd.get_stream().active
+            except Exception:
+                break
             time.sleep(PAUSE_TIME)  # Should the TTS stream should still be active?
             if self.processing is False:
                 sd.stop()  # Stop the audio stream
